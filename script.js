@@ -36,7 +36,7 @@ let randomIndex=Math.floor(Math.random()*100);
 let total=students.length
 
 para=document.getElementById('stud')
-    if(randomIndex>30){
+    if(randomIndex>total-1){
         let tens=randomIndex.toString().split('').map((elem)=>parseInt(elem)).reduce((ac,val)=>ac+=val,0)
         
         para.textContent=students[tens];
