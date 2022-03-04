@@ -1,49 +1,21 @@
-
-
-const students=["Paullete Adhiambo",
-"Adlight Akinyi",
-"Damaris Chepchirchir",
-"Flora	Chepchirchir",
-"Hanan	Ibrahim",
-"Denis	Kagunda",
-"Rose	kamau",
-"Isabel	Karimi",
-"Kabui	Kariuki",
-"Richard Koinange",
-"Sam Kuria",
-"Catherine Marite",
-"Pauline Momanyi",
-"Martin	Muchai",
-"John Muiruri",
-"Eunice	Mungai",
-"Milcah	Muraguri",
-"Yvonne	Muthui",
-"Ann Mwangi",
-"Nancy Mwende",
-"Ann Ndegwa",
-"Lynn Nyangon",
-"Beverly Odhiambo",
-"John	Odhiambo",
-"John	Onyaango",
-"Joseph	Onyango",
-"Catherine Otondi",
-"William Owalla",
-"Ruth Eva Wamuyu",
-"Purity	Wanjiku",
-"Andrian Weru"]
+const students=["Paullete Adhiambo","Adlight Akinyi","Damaris Chepchirchir","Flora	Chepchirchir","Hanan	Ibrahim","Denis	Kagunda","Rose	kamau","Isabel	Karimi",
+"Kabui	Kariuki","Richard Koinange","Sam Kuria","Catherine Marite","Pauline Momanyi","Martin	Muchai","John Muiruri","Eunice	Mungai","Milcah	Muraguri",
+"Yvonne	Muthui","Ann Mwangi","Nancy Mwende","Ann Ndegwa","Lynn Nyangon","Beverly Odhiambo","John	Odhiambo","John	Onyaango","Joseph	Onyango","Catherine Otondi",
+"William Owalla","Ruth Eva Wamuyu","Purity	Wanjiku","Andrian Weru","Already displayed this...Looking for another"]
 // console.log(students.length)
 let indiceList=[];
 let total=students.length
 const button=document.getElementById('generate');
 button.addEventListener('click',()=>{
 function generateIndex(){
+    let exists=false;
     let randomIndex=Math.floor(Math.random()*100);
-    if(randomIndex>total-1){
+    if(randomIndex>total-2){
         randomIndex=randomIndex.toString().split('').map((elem)=>parseInt(elem)).reduce((ac,val)=>ac+=val,0)
     }  
     
     if(indiceList.includes(randomIndex)){
-        indiceList.unshit(randomIndex);
+        exists=true
         generateIndex();
     }
     
@@ -54,7 +26,11 @@ function generateIndex(){
     indiceList.push(randomIndex);
     console.log(randomIndex)
     console.log(indiceList)
-    return randomIndex
+    if(exists!==true){
+        return randomIndex
+    }else{
+        return 31
+    }
 }
 para=document.getElementById('stud')
     
