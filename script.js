@@ -33,24 +33,25 @@ const students=["Paullete Adhiambo",
 "Andrian Weru"]
 // console.log(students.length)
 let indiceList=[];
+let total=students.length
 const button=document.getElementById('generate');
 button.addEventListener('click',()=>{
-
-let total=students.length
-
 function generateIndex(){
     let randomIndex=Math.floor(Math.random()*100);
     if(randomIndex>total-1){
         randomIndex=randomIndex.toString().split('').map((elem)=>parseInt(elem)).reduce((ac,val)=>ac+=val,0)
     }  
+    
     if(indiceList.includes(randomIndex)){
+        indiceList.unshit(randomIndex);
         generateIndex();
     }
-    indiceList.push(randomIndex);
-    if(indiceList.length===31){
+    
+    if(indiceList.length===30){
         indiceList=[];
         console.log("reset")
     }
+    indiceList.push(randomIndex);
     console.log(randomIndex)
     console.log(indiceList)
     return randomIndex
