@@ -1,3 +1,5 @@
+
+
 const students=["Paullete Adhiambo",
 "Adlight Akinyi",
 "Damaris Chepchirchir",
@@ -47,5 +49,3 @@ para=document.getElementById('stud')
 
 
 })
-
-
